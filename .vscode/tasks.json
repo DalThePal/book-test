@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Dev Server",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"if [ ! -d 'src/library/.git' ]; then git submodule update --init src/library; fi && pnpm i --frozen-lockfile && pnpm run clean && pnpm run start"
+			],
+			"presentation": {
+				"panel": "new",
+				"echo": false,
+				"reveal": "never"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"icon": {
+				"id": "vm-running",
+				"color": "terminal.ansiGreen"
+			}
+		}
+	]
+}
